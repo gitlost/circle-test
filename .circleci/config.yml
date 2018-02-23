@@ -24,7 +24,7 @@ jobs:
             source /home/circleci/.bashrc
       - run:
           name: "Install Dependencies"
-          command: sudo apt-get update && sudo apt-get install subversion && sudo apt-get install mysql-client-5.7
+          command: sudo apt-get update && sudo apt-get install subversion
       - run:
           name: "Run Tests"
           command: |
@@ -33,6 +33,7 @@ jobs:
             phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
             phpcs
             rm -rf $WP_TESTS_DIR $WP_CORE_DIR
+            locate mysqladmin
             bash bin/install-wp-tests.sh wordpress_test root '' 127.0.0.1 4.4
             phpunit
             WP_MULTISITE=1 phpunit
