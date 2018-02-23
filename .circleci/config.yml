@@ -24,7 +24,7 @@ jobs:
             source /home/circleci/.bashrc
       - run:
           name: "Install Dependencies"
-          command: sudo apt-get update && sudo apt-get install subversion
+          command: sudo apt-get update && sudo apt-get install subversion && sudo apt-get install mysql-client
       - run:
           name: "Run Tests"
           command: |
