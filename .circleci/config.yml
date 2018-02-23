@@ -25,7 +25,7 @@ jobs:
           name: "Install Dependencies"
           command: |
             sudo apt-get update && sudo apt-get install subversion
-            sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian jessie main\n' >> /etc/apt/sources.list"
+            sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian sid main\n' >> /etc/apt/sources.list"
             sudo apt-get update && sudo apt-get install mysql-client-5.7
       - run:
           name: "Run Tests"
