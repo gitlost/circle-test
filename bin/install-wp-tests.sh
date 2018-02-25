@@ -144,8 +144,7 @@ install_db() {
 	fi
 
 	# create database
-	export MYSQL_PWD=''
-	mysqladmin create $DB_NAME --user="$DB_USER"$EXTRA
+	mysqladmin create $DB_NAME --user="$DB_USER" --password="$DB_PASS"$EXTRA
 }
 
 install_wp
